@@ -1,0 +1,58 @@
+{
+  "name": "ags-console",
+  "version": "1.0.0",
+  "description": "Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...",
+  "AGS": {
+    "framework": {
+      "version": "1.0.0"
+    },
+    "AutoIt": {
+      "version": "3.3.14.5"
+    }
+  },
+  "keywords": [
+    "Generate a new AGS project",
+    "Create a Window Setup for AGS deployment",
+    "Tidy all source files AGS",
+    "AGS",
+    "AutoIt",
+    "AutoItGUISkeleton",
+    "AutoIt GUI Skeleton",
+    "au3"
+  ],
+  "main": "index.js",
+  "bin": {
+    "ags": "index.js"
+  },
+  "repository": {
+    "url": "https://github.com/notyet.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/notyet.git",
+  "author": "20100 <vb20100bv@gmail.com> (https://github.com/v20100v)",
+  "license": "MIT",
+  "scripts": {
+    "pkg": "pkg . --targets node10-win-x64 --output ./build/Ags",
+    "package-x86": "pkg . --targets node10-win-x86 --output ./build/Ags",
+    "package-x64": "pkg . --targets node10-win-x64 --output ./build/Ags"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "boxen": "^1.3.0",
+    "caporal": "^0.10.0",
+    "chalk": "^2.4.1",
+    "colors": "^1.3.0",
+    "fast-glob": "^2.2.2",
+    "inquirer": "^6.0.0",
+    "replace-in-file": "^3.4.0",
+    "request": "^2.87.0",
+    "shelljs": "^0.8.2",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "pkg": "^4.3.3"
+  },
+  "pkg": {
+    "assets": "./templates/**/*"
+  }
+}

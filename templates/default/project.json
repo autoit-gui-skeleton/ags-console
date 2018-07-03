@@ -1,0 +1,16 @@
+{
+  "name": "{%projectAGSName%}",
+  "version": "{%projectAGSVersion%}",
+  "description": "{%projectAGSDescription%}",
+  "AGS": {
+    "framework": {
+      "version": "{%AGSVersion%}"
+    },
+    "AutoIt": {
+      "version": "{%AutoItVersion%}"
+    }
+  },
+  "author": "{%authorName%} <{%authorEmail%}>",
+  "license": "{%license%}",
+  "year": "{%year%}"
+}

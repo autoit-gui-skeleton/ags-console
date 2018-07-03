@@ -1,0 +1,69 @@
+#-------------------------------------------------------------------------------
+#
+# Copyright © 2018-05, v20100v
+#
+# @name           : AGS-tools-tidy-project
+# @version        : 1.0.0
+# @AGS package    : AGS v1.0.0
+#
+# This file is a "template" of what your 'parameters.ini' file should look like
+# Set parameters here that may be different on each application and environment
+# development, prepare release or deployment for production.
+#
+#  1. Copy this File
+#  2. Rename it to parameters.ini
+#  3. Define your parameters into this file. Don't forgot that values of this
+#     parameters values can be change by user into the GUI.
+#  4. We add paramter of application into the section [APPLICATION]. Don't
+#     forget to specify if the parameter is OPTIONAL or REQUIRED in comment.
+#  5. We can also found section [AGS-COMPONENT_NAME] if we add its component
+#     into our project. And its section is used in order to configure this
+#     component. For example with the AGS compponent HttpRequest, we can input
+#     the section [AGS_HTTP_REQUEST] to configure its parameter.
+#
+#
+# How this file is referenced in AGS project ?
+# -------------------------------------------------------
+# To use it, we have a global constante variable $APP_PARAMETERS_INI, wich
+# contains the full path to it. It's defined in `./src/GLOBALS.au3`, and when
+# the application start-up, it checks that parameters.ini exist.
+#
+# How to read the value of a parameter ?
+# --------------------------------------
+# For a string value, we use:
+# ```
+# Local $LAST_OPEN_FILE = IniRead( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "LAST_OPEN_FILE", "NotFound")
+# ```
+#
+# And for a integer value, we use:
+# ```
+# Local $IS_OPEN = Int(IniRead( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "IS_OPEN", -1)
+# ```
+#
+# How to change the value of a parameter ?
+# ----------------------------------------
+# For example, if the value is provided from an input controller in GUI, we use
+# in first the GUICtrlRead method to get its value. And finally we save its
+# value into a parameter, with this instrcution :
+# ```
+# IniWrite( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "LAST_OPEN_FILE", _
+#   GUICtrlRead($input_OPEN_FILE) _
+# )
+# ```
+#
+#-------------------------------------------------------------------------------
+
+[APPLICATION]
+; [REQUIRED]
+; Add required parameters of application here
+
+; [OPTIONAL]
+; Add optional parameters of application here
+
+
+[AGS_HTTP_REQUEST]
+; [OPTIONAL] Use a proxy for http connexion
+# PROXY=http://myProxy.com:8080
