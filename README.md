@@ -7,9 +7,114 @@ AGS console commands
 
 <br/>
 
-## Requirements for AGS console commands
+## Features
 
-### Install `Node.js`
+### Centralized all commands of AGS into an application console
+
+```
+  ╔════════════════════════════════════════════════════════════════════════════════════════════════════╗
+  ║                                                                                                    ║
+  ║  AGS Console                                                                                       ║
+  ║  v1.0.0-alpha                                                                                      ║
+  ║                                                                                                    ║
+  ║  Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...  ║
+  ║                                                                                                    ║
+  ╚════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+   USAGE
+
+     ags <command> [options]
+
+   COMMANDS
+
+     new <name>          Create a new AGS project.
+     clean               Clean all AutoIt code source.
+     setup               Create a windows setup of project.
+     help <command>      Display help for a specific command
+
+   GLOBAL OPTIONS
+
+     -h, --help         Display help
+     -V, --version      Display version
+     --no-color         Disable colors
+     --quiet            Quiet mode - only displays warn and error messages
+     -v, --verbose      Verbose mode - will also output debug messages
+```
+
+
+### Create a new AGS project
+
+When you start a new project, it can often ve a repetitive and boring process. For each new project, it more confortable to have an automate to do this. This command will allow you to quickly scaffold out a new project using a given template. It will be completely extensible so that you can easily create a new template and adapt it to your own needs.
+
+To create a new AGS project just type:
+
+```
+λ ags new MyApp
+
+╔════════════════════════════╗
+║                            ║
+║  Create a new AGS project  ║
+║                            ║
+╚════════════════════════════╝
+
+│  1. Configuration of new AGS project  ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ ? What is the name of your AGS project? MyApp
+? What is the version of your AGS project - use semantic versioning? 1.0.0
+? Short description of your project: I believe i can fly...
+? Name project's author: v20100v
+? Email project's author: v20100v@no-reply.com
+? What license do you use for this project? MIT License
+{ projectAGSName: 'MyApp',
+  projectAGSVersion: '1.0.0',
+  projectAGSDescription: 'I believe i can fly...',
+  authorName: 'v20100v',
+  authorEmail: 'v20100v@no-reply.com',
+  license: 'MIT License' }
+? Do you confirm this configuration? Yes
+[OK] It has a valid configuration.
+
+│  2. Create output directory  ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] Output directory was created!
+
+│  3. Copy template files  ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All templates files have been copied in output directory. D:\AGS\ags-console\build\MyApp
+
+│  4. Renaming files  ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All files with template variable have been renamed.
+
+│  5. Replacing template variables  ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All templates variables have been replaced.
+
+--- end ---
+```
+
+You can add a verbose mode with `--verbose` option for output debug messages.
+
+In first of this process, it will ask you some questions in order to configure your new AGS project. After, it will create the ouput directory with the name of your new AGS project. It will copy all templates files into it. And finally it will replace all template variables into files store in output directory.
+
+
+### Clean AutoIt files 
+
+To clean the code of a AGS project, you must launch this command into the root folder of the AGS project. Or you can launch this command anywhere, and specify with the `directory` option where is the folder AGS project to clean.
+
+To clean the current working directory (./), type:
+
+```
+λ ags clean
+```
+
+To clean a specific directory type this instruction. You can use a relative or absolute path, as you prefered.
+
+```
+λ ags clean --directory .\MyApp\
+λ ags clean --directory D:\AGS\MyApp\
+```
+
+You can add a verbose mode with `--verbose` option for output debug messages.
+
+
+<br/>
+
+## Develop and extends AGS console
+
+### Requirements for AGS console commands
+
+#### Install `Node.js`
 
 We will use [Node.js](https://nodejs.org/) as an environment for developers, and we take benefits of its tools.
 
@@ -21,7 +126,7 @@ Run your prefered windows command ; cmd, cmder or powershell ; as an administrat
 λ choco install nodejs
 ```
 
-### Install `yarn`
+#### Install `yarn`
 
 We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Once you have Chocolatey installed, you may install yarn by running the following code in your console. This will also ensure that you have Node.js installed.
 
@@ -30,11 +135,7 @@ We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package m
 ```
 
 
-<br/>
-
-## Develop and extends AGS console 
-
-### Install all dependencies
+#### Install all dependencies
 
 To install all dependencies, we use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Just type:
 
