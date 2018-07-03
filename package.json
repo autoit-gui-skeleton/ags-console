@@ -1,6 +1,6 @@
 {
   "name": "ags-console",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...",
   "AGS": {
     "framework": {
@@ -33,8 +33,8 @@
   "license": "MIT",
   "scripts": {
     "pkg": "pkg . --targets node10-win-x64 --output ./build/Ags",
-    "package-x86": "pkg . --targets node10-win-x86 --output ./build/Ags",
-    "package-x64": "pkg . --targets node10-win-x64 --output ./build/Ags"
+    "package-x86": "pkg . --targets node10-win-x86 --output ./build/Ags-x86",
+    "package-x64": "pkg . --targets node10-win-x64 --output ./build/Ags-x64"
   },
   "dependencies": {
     "async": "^2.6.1",
