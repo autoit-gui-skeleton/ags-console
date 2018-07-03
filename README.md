@@ -8,6 +8,7 @@ AGS console
 <br/>
 
 - [AGS console](#ags-console)
+  * [What is AGS console ?](#what-is-ags-console--)
   * [Features](#features)
     + [Centralized all commands of AGS into an application console](#centralized-all-commands-of-ags-into-an-application-console)
     + [Create a new AGS project](#create-a-new-ags-project)
@@ -28,6 +29,15 @@ AGS console
 
 <br/>
 
+
+## What is AGS console ?
+
+AGS-console is a subproject of AutoIt Gui Skeleton (AGS). The goal of AGS is to give an environment and tools for developers, that makes it easy to build AutoIt applications. AGS propose to use conventions and a model to organize the code of an AutoIt Application with an graphic user interface (GUI).
+
+More information about [AGS](https://v20100v.github.io/autoit-gui-skeleton/).
+
+
+<br/>
 
 ## Features
 
