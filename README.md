@@ -1,11 +1,33 @@
-AGS console commands
-====================
+AGS console
+===========
 
 
-> AGS provides lots of commands ./bin/ags.bat created in the Node.js ecosystem. You can also customize and create your own commands to help your production with a simply task manager.
+> AGS provides lots of commands created in the Node.js ecosystem. You can also customize and create your own commands to help your production with it.
 
 
 <br/>
+
+- [AGS console](#ags-console)
+  * [Features](#features)
+    + [Centralized all commands of AGS into an application console](#centralized-all-commands-of-ags-into-an-application-console)
+    + [Create a new AGS project](#create-a-new-ags-project)
+    + [Clean AutoIt files](#clean-autoit-files)
+  * [Develop and extends AGS console](#develop-and-extends-ags-console)
+    + [Requirements for AGS console commands](#requirements-for-ags-console-commands)
+      - [Install `Node.js`](#install--nodejs-)
+      - [Install `yarn`](#install--yarn-)
+      - [Install all dependencies](#install-all-dependencies)
+    + [Running the application locally with index.js](#running-the-application-locally-with-indexjs)
+    + [Running the application locally as a global npm module](#running-the-application-locally-as-a-global-npm-module)
+    + [How to package AGS console into an independant executable ?](#how-to-package-ags-console-into-an-independant-executable--)
+    + [How to create a new command for AGS console ?](#how-to-create-a-new-command-for-ags-console--)
+  * [About](#about)
+    + [Release history](#release-history)
+    + [Contributing](#contributing)
+    + [License](#license)
+
+<br/>
+
 
 ## Features
 
@@ -57,7 +79,8 @@ To create a new AGS project just type:
 ║                            ║
 ╚════════════════════════════╝
 
-│  1. Configuration of new AGS project  ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ ? What is the name of your AGS project? MyApp
+│  1. Configuration of new AGS project  ├──■ 
+? What is the name of your AGS project? MyApp
 ? What is the version of your AGS project - use semantic versioning? 1.0.0
 ? Short description of your project: I believe i can fly...
 ? Name project's author: v20100v
@@ -72,13 +95,17 @@ To create a new AGS project just type:
 ? Do you confirm this configuration? Yes
 [OK] It has a valid configuration.
 
-│  2. Create output directory  ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] Output directory was created!
+│  2. Create output directory  ├──■
+[OK] Output directory was created!
 
-│  3. Copy template files  ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All templates files have been copied in output directory. D:\AGS\ags-console\build\MyApp
+│  3. Copy template files  ├──■
+[OK] All templates files have been copied in output directory. D:\AGS\ags-console\build\MyApp
 
-│  4. Renaming files  ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All files with template variable have been renamed.
+│  4. Renaming files  ├──■
+[OK] All files with template variable have been renamed.
 
-│  5. Replacing template variables  ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────■ [OK] All templates variables have been replaced.
+│  5. Replacing template variables  ├──■
+[OK] All templates variables have been replaced.
 
 --- end ---
 ```
