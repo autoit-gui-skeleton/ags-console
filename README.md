@@ -18,10 +18,12 @@ AGS-console
       - [Install `Node.js`](#install--nodejs-)
       - [Install `yarn`](#install--yarn-)
       - [Install all Node.js dependencies.](#install-all-nodejs-dependencies)
-    + [Running the application locally with index.js](#running-the-application-locally-with-indexjs)
-    + [Running the application locally as a global npm module](#running-the-application-locally-as-a-global-npm-module)
-    + [How to package AGS console into an independant executable ?](#how-to-package-ags-console-into-an-independant-executable--)
+    + [How to execute AGS console locally ?](#how-to-execute-ags-console-locally--)
+      - [Running the application locally with entry point index.js](#running-the-application-locally-with-entry-point-indexjs)
+      - [Running the application locally as a global npm module linked](#running-the-application-locally-as-a-global-npm-module-linked)
     + [How to create a new command for AGS console ?](#how-to-create-a-new-command-for-ags-console--)
+    + [How to create a new template ?](#how-to-create-a-new-template--)
+    + [How to package AGS-console into an independant executable ?](#how-to-package-ags-console-into-an-independant-executable--)
   * [About](#about)
     + [Release history](#release-history)
     + [Contributing](#contributing)
@@ -102,7 +104,6 @@ You can add a verbose mode with `--verbose` option for output debug messages.
 
 
 
-
 <br/>
 
 ## Develop and extends AGS console
@@ -121,8 +122,6 @@ Run your prefered windows command ; cmd, cmder or powershell ; as an administrat
 λ choco install nodejs
 ```
 
-<br/>
-
 #### Install `yarn`
 
 We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Once you have Chocolatey installed, you may install yarn by running the following code in your console. This will also ensure that you have Node.js installed.
@@ -130,8 +129,6 @@ We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package m
 ```bash
 λ choco install yarn
 ```
-
-<br/>
 
 #### Install all Node.js dependencies.
 
@@ -141,9 +138,13 @@ To install all dependencies, we use [Yarn](https://yarnpkg.com/en/docs/install#w
 λ yarn install
 ```
 
+
+
 <br/>
 
-### Running the application locally with index.js
+### How to execute AGS console locally ?
+
+#### Running the application locally with entry point index.js
 
 To run this application locally, just execute the main entry program index.js on root folder. But with this approach, you only can execute this program on root folder. To do this, type:
 
@@ -151,9 +152,7 @@ To run this application locally, just execute the main entry program index.js on
 λ node index.js
 ```
 
-<br/>
-
-### Running the application locally as a global npm module
+#### Running the application locally as a global npm module linked
 
 Since you’re developing the generator locally, it’s not yet available as a global npm module. From the root of your generator project (in the generator-name/ folder), type:
 
@@ -164,44 +163,18 @@ Since you’re developing the generator locally, it’s not yet available as a g
 That will install your project dependencies and symlink a global module to your local file. After npm is done, you’ll be able to call this console application with its name `λ ags` define in bin property of `package.json` file.
 
 
-<br/>
-
-### How to package AGS console into an independant executable ?
-
-In order to package this application, we use [pkg.js](https://github.com/zeit/pkg). It give us a CLI tool which is able to package a Node.js project into an executable that can be run even on devices without Node.js installed.
-
-As you can see on its description, pkg.js can:
-
- - Instantly make executables for other platforms (cross-compilation)
- - Make some kind of self-extracting archive or installer
- - No need to install Node.js and npm to run the packaged application
- - No need to download hundreds of files via npm install to deploy your application. Deploy it as a single file
- - Put your assets inside the executable to make it even more portable
-
-To make this executable, you must install node dependencies developpement defines in package.json, or install manually pkg as a global node module with :
-
-```bash
-λ yarn global add pkg
-```
-
-To launch the build, you can use alias define in package.json:
-
-```bash
-λ npm run pkg
-λ npm run package-x86
-λ npm run package-x64
-```
-
-This command will create the binary `Ags.exe` into `./build` directory.
-
 
 <br/>
 
 ### How to create a new command for AGS console ?
 
-1 - Create a new folder into ./lib/commands/ with a name which must respect this convention `xxxCommand`, and after create into this folder a file with the same name `xxxCommand.js`. For example create this `./lib/commands/MyAmazingCommand/MyAmazingCommand.js`.
+To create a new command for AGS console:
 
-2 - AGS console use [Caporal.js](https://github.com/mattallty/Caporal.js?), and an AGS command is only the callback action attache to a command caporal. So the file `MyAmazingCommand.js` as a module Node.js must look like that:
+1 - Create a new folder into ./lib/commands/ with a name which must respect this convention `xxxCommand`
+
+2 - Create into this folder a file with the same name `xxxCommand.js`. For example create this `./lib/commands/MyAmazingCommand/MyAmazingCommand.js`.
+
+3 - AGS console use [Caporal.js](https://github.com/mattallty/Caporal.js?), and an AGS command is only the callback action attache to a command caporal. So the file `MyAmazingCommand.js` as a module Node.js must look like that:
 
 ```js
 // ./lib/commands/MyAmazingCommand/MyAmazingCommand.js
@@ -226,7 +199,7 @@ module.exports = (arguments, options, logger) => {
 }
 ```
 
-3 - Register this command with the method `configureCaporal()` into the file `AgsConsole.js`.
+4 - And finally register an configure this command with the method `configureCaporal()` into the file `AgsConsole.js`. Take a look of another command to understand how to configure it.
 
 ```js
 // ./lib/AgsConsole.js
@@ -248,7 +221,129 @@ AgsConsole.prototype.configureCaporal = function () {
 For more information of how to configure a command, go to [Caporal.js](https://github.com/mattallty/Caporal.js?) read the documentation.
   
 
+
 <br/>
+
+### How to create a new template ?
+
+To create a new template for ags-console:
+
+1 - Create a folder into `./templates/` directory. For example create `./templates/FoobarTheme`
+
+2 - Put into it all directories and files need into your template. When you use the command `ags new --template FoobarTheme`, it will copy all this directories and files into the output directory.
+
+3 - Into the name of this files, or into the text of this files, you can use templates variables. For example you can put the template variable `projectAGSName` into a text file by encapsulation like this `{%projectAGSName%}`. The template engine will replace it by its value given by user. Take a look of `./tempaltes/default/README.md`.
+
+4 - We have two types of templates variables. Those which are asked to user in the configuration step of the new command, and those which are not asked to user. To add a new template variables, just defines into the `templateVariables` array.
+
+```js
+// ./lib/commands/CreateNewAgsProjectCommand.js
+
+/**
+* The template variables are asked to user with the method _inquirerConfigurationAGS.
+* Tye are used to replace the placeholder values, by iterate and read all template files.
+*
+* @type {string[]}
+*/
+let templateVariables = [
+    // Template variables which need asked to user
+    'projectAGSName',
+    'projectAGSVersion',
+    'projectAGSDescription',
+    'authorName',
+    'authorEmail',
+    'license',
+
+    // Template variables which NO need asked to user
+    'year',
+    'AGSVersion',
+    'AutoItVersion'
+]; 
+```
+
+If it's a template variable which NO need asked to user, you must set its value into the `_initializeDefaultTemplateVariables()` method.
+
+```js
+/**
+* Set value for template variables which no need asked to user
+*
+* @param answersConfiguration, given by inquirer.prompt
+* @private
+*/
+function _initializeDefaultTemplateVariables(answersConfiguration) {
+    answersConfiguration.year = new Date().getFullYear();
+    answersConfiguration.AGSVersion = require('../../../package.json').AGS.framework.version;
+    answersConfiguration.AutoItVersion = require('../../../package.json').AGS.AutoIt.version;
+    return answersConfiguration;
+}
+```
+
+And if it's a template variable which need asked to user, you must add the associated question into the `_inquirerConfigurationAGS()` method. We use [Inquirer.js](https://github.com/SBoudrias/Inquirer.js/) to ask questions, parse input, validate answers and more. Read this documentation to understand how to configure and add a new question.
+
+5 - If you had a new template variable, it's a good pratice to reference all values of templates variables into the `project.json` file in the root of template folder. This file give all values for all templates variables of template.
+
+For example in default template we have `/templates/default/project.json`:
+
+```json
+{
+  "name": "{%projectAGSName%}",
+  "version": "{%projectAGSVersion%}",
+  "description": "{%projectAGSDescription%}",
+  "AGS": {
+    "framework": {
+      "version": "{%AGSVersion%}"
+    },
+    "AutoIt": {
+      "version": "{%AutoItVersion%}"
+    }
+  },
+  "author": "{%authorName%} <{%authorEmail%}>",
+  "license": "{%license%}",
+  "year": "{%year%}"
+}
+```
+
+
+
+<br/>
+
+### How to package AGS-console into an independant executable ?
+
+Finaly in order to package AGS-console, we use [pkg.js](https://github.com/zeit/pkg). It give us a CLI tool which is able to package a Node.js project into an executable that can be run even on devices without Node.js installed.
+
+As you can see on its description, pkg.js can:
+
+ - Instantly make executables for other platforms (cross-compilation)
+ - Make some kind of self-extracting archive or installer
+ - No need to install Node.js and npm to run the packaged application
+ - No need to download hundreds of files via npm install to deploy your application. Deploy it as a single file
+ - Put your assets inside the executable to make it even more portable
+
+To make this executable, we assume that you install node dependencies developpement defines in package.json, or install manually pkg as a global node module with :
+
+```bash
+λ yarn global add pkg
+```
+
+To launch the build, you can use `run` alias define in package.json:
+
+```bash
+λ npm run pkg
+λ npm run package-x86
+λ npm run package-x64
+```
+
+This command will create the binary `Ags.exe` into `./build` directory.
+
+
+<br/>
+
+
+
+
+
+
+
 
 ## About
 
