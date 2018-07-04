@@ -1,14 +1,14 @@
-AGS console
+AGS-console
 ===========
 
 
-> AGS provides lots of commands created in the Node.js ecosystem. You can also customize and create your own commands to help your production with it.
+> AGS-console provides commands created in the Node.js ecosystem in order to help developpers who built an AutoIt project with AGS. AGS-console is a subproject of AutoIt Gui Skeleton [AGS](https://v20100v.github.io/autoit-gui-skeleton/). You can also customize and create your own commands to help your production.
 
 
 <br/>
 
-- [AGS console](#ags-console)
-  * [What is AGS console ?](#what-is-ags-console--)
+- [AGS-console](#ags-console)
+  * [What is AGS-console ?](#what-is-ags-console--)
   * [Features](#features)
     + [Centralized all commands of AGS into an application console](#centralized-all-commands-of-ags-into-an-application-console)
     + [Create a new AGS project](#create-a-new-ags-project)
@@ -17,7 +17,7 @@ AGS console
     + [Requirements for AGS console commands](#requirements-for-ags-console-commands)
       - [Install `Node.js`](#install--nodejs-)
       - [Install `yarn`](#install--yarn-)
-      - [Install all dependencies](#install-all-dependencies)
+      - [Install all Node.js dependencies.](#install-all-nodejs-dependencies)
     + [Running the application locally with index.js](#running-the-application-locally-with-indexjs)
     + [Running the application locally as a global npm module](#running-the-application-locally-as-a-global-npm-module)
     + [How to package AGS console into an independant executable ?](#how-to-package-ags-console-into-an-independant-executable--)
@@ -30,9 +30,9 @@ AGS console
 <br/>
 
 
-## What is AGS console ?
+## What is AGS-console ?
 
-AGS-console is a subproject of AutoIt Gui Skeleton (AGS). The goal of AGS is to give an environment and tools for developers, that makes it easy to build AutoIt applications. AGS propose to use conventions and a model to organize the code of an AutoIt Application with an graphic user interface (GUI).
+AGS-console is a subproject of AutoIt Gui Skeleton [AGS](https://v20100v.github.io/autoit-gui-skeleton/). AGS-console is a command line application (CLI) build in the Node.js ecosystem with the library [Caporal.js](https://github.com/mattallty/Caporal.js). It provides commands to help developpers who built an AutoIt project with AGS. The goal of AGS is to give an environment and tools for developers, that makes it easy to build AutoIt applications. AGS propose to use conventions and a model to organize the code of an AutoIt Application with an graphic user interface (GUI).
 
 More information about [AGS](https://v20100v.github.io/autoit-gui-skeleton/).
 
@@ -46,7 +46,7 @@ More information about [AGS](https://v20100v.github.io/autoit-gui-skeleton/).
 ```
   ╔════════════════════════════════════════════════════════════════════════════════════════════════════╗
   ║                                                                                                    ║
-  ║  AGS Console                                                                                       ║
+  ║  AGS-console                                                                                       ║
   ║  v1.0.0-alpha                                                                                      ║
   ║                                                                                                    ║
   ║  Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...  ║
@@ -145,6 +145,7 @@ To clean a specific directory type this instruction. You can use a relative or a
 You can add a verbose mode with `--verbose` option for output debug messages.
 
 
+
 <br/>
 
 ## Develop and extends AGS console
@@ -172,9 +173,9 @@ We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package m
 ```
 
 
-#### Install all dependencies
+#### Install all Node.js dependencies.
 
-To install all dependencies, we use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Just type:
+To install all dependencies, we use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Just type as the root folder of folder. All dependencies are always described in `package.json` file.
 
 ```bash
 λ yarn install
