@@ -43,87 +43,41 @@ More information about [AGS](https://v20100v.github.io/autoit-gui-skeleton/).
 
 ### Centralized all commands of AGS into an application console
 
-```
-  ╔════════════════════════════════════════════════════════════════════════════════════════════════════╗
-  ║                                                                                                    ║
-  ║  AGS-console                                                                                       ║
-  ║  v1.0.0-alpha                                                                                      ║
-  ║                                                                                                    ║
-  ║  Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...  ║
-  ║                                                                                                    ║
-  ╚════════════════════════════════════════════════════════════════════════════════════════════════════╝
+![ags-console help result](./docs/images/ags-console_001.png)
 
-   USAGE
 
-     ags <command> [options]
-
-   COMMANDS
-
-     new <name>          Create a new AGS project.
-     clean               Clean all AutoIt code source.
-     setup               Create a windows setup of project.
-     help <command>      Display help for a specific command
-
-   GLOBAL OPTIONS
-
-     -h, --help         Display help
-     -V, --version      Display version
-     --no-color         Disable colors
-     --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages
-```
-
+<br/>
 
 ### Create a new AGS project
 
 When you start a new project, it can often ve a repetitive and boring process. For each new project, it more confortable to have an automate to do this. This command will allow you to quickly scaffold out a new project using a given template. It will be completely extensible so that you can easily create a new template and adapt it to your own needs.
 
-To create a new AGS project just type:
+To create a new AGS project call *MyApp*, just type:
 
 ```
 λ ags new MyApp
-
-╔════════════════════════════╗
-║                            ║
-║  Create a new AGS project  ║
-║                            ║
-╚════════════════════════════╝
-
-│  1. Configuration of new AGS project  ├──■ 
-? What is the name of your AGS project? MyApp
-? What is the version of your AGS project - use semantic versioning? 1.0.0
-? Short description of your project: I believe i can fly...
-? Name project's author: v20100v
-? Email project's author: v20100v@no-reply.com
-? What license do you use for this project? MIT License
-{ projectAGSName: 'MyApp',
-  projectAGSVersion: '1.0.0',
-  projectAGSDescription: 'I believe i can fly...',
-  authorName: 'v20100v',
-  authorEmail: 'v20100v@no-reply.com',
-  license: 'MIT License' }
-? Do you confirm this configuration? Yes
-[OK] It has a valid configuration.
-
-│  2. Create output directory  ├──■
-[OK] Output directory was created!
-
-│  3. Copy template files  ├──■
-[OK] All templates files have been copied in output directory. D:\AGS\ags-console\build\MyApp
-
-│  4. Renaming files  ├──■
-[OK] All files with template variable have been renamed.
-
-│  5. Replacing template variables  ├──■
-[OK] All templates variables have been replaced.
-
---- end ---
 ```
+
+![ags-console help result](./docs/images/ags-console_002.png)
 
 You can add a verbose mode with `--verbose` option for output debug messages.
 
+![ags-console help result](./docs/images/ags-console_003.png)
+
 In first of this process, it will ask you some questions in order to configure your new AGS project. After, it will create the ouput directory with the name of your new AGS project. It will copy all templates files into it. And finally it will replace all template variables into files store in output directory.
 
+When you create a new project, it use the default template, store in `./templates/default/ directory`. Moreover you can also customize an create your own template, in order to be more adaptable to your needs. If you want develop and extend ags-console, all templates must store into a folder in the root directory `./templates/`. For example create the folder `./templates/FoobarTheme/` and just create a README file it. To use another template just use the `--template` option
+
+```
+λ ags new MyApp --template FoobarTheme
+```
+
+If the template doesn't found, it will return an error like this:
+
+![ags-console help result](./docs/images/ags-console_004.png)
+
+
+<br/>
 
 ### Clean AutoIt files 
 
@@ -142,7 +96,10 @@ To clean a specific directory type this instruction. You can use a relative or a
 λ ags clean --directory D:\AGS\MyApp\
 ```
 
+![ags-console help result](./docs/images/ags-console_005.png)
+
 You can add a verbose mode with `--verbose` option for output debug messages.
+
 
 
 
@@ -164,6 +121,8 @@ Run your prefered windows command ; cmd, cmder or powershell ; as an administrat
 λ choco install nodejs
 ```
 
+<br/>
+
 #### Install `yarn`
 
 We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for code, instead of npm. Once you have Chocolatey installed, you may install yarn by running the following code in your console. This will also ensure that you have Node.js installed.
@@ -172,6 +131,7 @@ We use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package m
 λ choco install yarn
 ```
 
+<br/>
 
 #### Install all Node.js dependencies.
 
@@ -181,6 +141,7 @@ To install all dependencies, we use [Yarn](https://yarnpkg.com/en/docs/install#w
 λ yarn install
 ```
 
+<br/>
 
 ### Running the application locally with index.js
 
@@ -190,6 +151,7 @@ To run this application locally, just execute the main entry program index.js on
 λ node index.js
 ```
 
+<br/>
 
 ### Running the application locally as a global npm module
 
@@ -199,40 +161,10 @@ Since you’re developing the generator locally, it’s not yet available as a g
 λ yarn link
 ```
 
-That will install your project dependencies and symlink a global module to your local file. After npm is done, you’ll be able to call this console application
+That will install your project dependencies and symlink a global module to your local file. After npm is done, you’ll be able to call this console application with its name `λ ags` define in bin property of `package.json` file.
 
-```bash
-λ ags
 
-  ╔═══════════════════════════════════════════════════════════╗
-  ║                                                           ║
-  ║  AGS Console                                              ║
-  ║  v1.0.0                                                   ║
-  ║                                                           ║
-  ║  Console commands for AGS (AutoIt GUI Skeleton) project.  ║
-  ║                                                           ║
-  ╚═══════════════════════════════════════════════════════════╝
-
-   USAGE
-
-     ags <command> [options]
-
-   COMMANDS
-
-     new <name>          Create a new AGS project.
-     clean               Clean all AutoIt code source.
-     setup               Create a windows setup of project.
-     help <command>      Display help for a specific command
-
-   GLOBAL OPTIONS
-
-     -h, --help         Display help
-     -V, --version      Display version
-     --no-color         Disable colors
-     --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages
-```
-
+<br/>
 
 ### How to package AGS console into an independant executable ?
 
@@ -262,6 +194,8 @@ To launch the build, you can use alias define in package.json:
 
 This command will create the binary `Ags.exe` into `./build` directory.
 
+
+<br/>
 
 ### How to create a new command for AGS console ?
 
@@ -314,7 +248,6 @@ AgsConsole.prototype.configureCaporal = function () {
 For more information of how to configure a command, go to [Caporal.js](https://github.com/mattallty/Caporal.js?) read the documentation.
   
 
-
 <br/>
 
 ## About
@@ -324,13 +257,15 @@ For more information of how to configure a command, go to [Caporal.js](https://g
  - AGS-console v1.0.0-alpha - *2018.07.03*
 
 
+<br/>
+
 ### Contributing
 
 Comments, pull-request & stars are always welcome !
 
 
+<br/>
+
 ### License
 
 Copyright (c) 2018 by [v20100v](https://github.com/v20100v). Released under the [MIT license](https://github.com/v20100v/ags-console/blob/develop/LICENSE.md).
-
-
