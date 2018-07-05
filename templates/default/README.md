@@ -1,7 +1,7 @@
-{%projectAGSName%}
+{{ projectAGSName }}
 ==================
 
-> {%projectAGSDescription%}
+> {{ projectAGSDescription }}
 
 
 # Features
@@ -14,7 +14,7 @@
 
 ## Release history
 
- - {%projectAGSName%} vx.y.z - {%year%}.xx.xx
+ - {{ projectAGSName }} vx.y.z - {{ year }}.xx.xx
 
 
 ## Contributing
@@ -24,7 +24,7 @@ Contributions and comments are always welcome !
 
 ## Credits
 
-{%projectAGSName%} make use of the folowing AutoIt libbrary:
+{{ projectAGSName }} make use of the folowing AutoIt libbrary:
 
 - [AGS](https://v20100v.github.io/autoit-gui-skeleton/) :: provide an architecture and an organization to efficiently build an desktop application Windows with AutoIt.
 - [GUICtrlOnHover](https://www.autoitscript.com/forum/files/file/179-guictrlonhover/) :: library allows to set event function for the window control hover process.
@@ -34,5 +34,5 @@ Contributions and comments are always welcome !
 
 ## License
 
-Under {%license%}.
-Copyright (c) {%year%}, {%authorName%} <{%authorEmail%}> 
+Under {{ license }}.
+Copyright (c) {{ year }}, {{ authorName }} <{{ authorEmail }}> 
