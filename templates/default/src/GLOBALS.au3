@@ -45,7 +45,7 @@ Global Const $APP_VERSION = "1.1.0"
 Global Const $APP_WEBSITE = "https://myApplication-website.org"
 Global Const $APP_EMAIL_CONTACT = "myApplication@website.org"
 Global Const $APP_ID = "acme.myApplication"
-Global Const $APP_LIFE_PERIOD = "2016-" & @YEAR
+Global Const $APP_LIFE_PERIOD = "2018-" & @YEAR
 Global Const $APP_COPYRIGHT = "© " & $APP_LIFE_PERIOD & ", A.C.M.E."
 
 
@@ -56,6 +56,14 @@ Global Const $APP_WIDTH = 800
 Global Const $APP_HEIGHT = 600
 Global Const $APP_GUI_TITLE_COLOR = 0x85C4ED
 Global Const $APP_GUI_LINK_COLOR = 0x5487FB
+
+
+;-------------------------------------------------------------------------------
+; AGS-compontents Check Updater constants
+;-------------------------------------------------------------------------------
+; Repository JSON use to check for updates. This json file must persist in a remote server available via internet,
+; and without restriction. For example you wan use Github to host it.
+Global Const $APP_REMOTE_RELEASES_JSON = "https://raw.githubusercontent.com/v20100v/autoit-gui-skeleton/develop/source/AGS-example-002___check-for-update/RELEASES.json"
 
 
 ;-------------------------------------------------------------------------------

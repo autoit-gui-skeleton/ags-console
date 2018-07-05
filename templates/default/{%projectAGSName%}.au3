@@ -1,16 +1,16 @@
 #cs ----------------------------------------------------------------------------
 
-Main entry program of {%projectAGSName%}
+Main entry program of {{ projectAGSName }}
 
 This is the main entry of application. When the application is
 started, the main GUI method is the first method called to build the user
 interface and handle events and user interactions.
 
-@project        : v{%projectAGSName%}
-@version        : v{%projectAGSVersion%}
-@author         : {%authorName%} <{%authorEmail%}>
-@AGS version    : v{%AGSVersion%}
-@AutoIt version : v{%AutoItVersion%}
+@project        : {{ projectAGSName }}
+@version        : v{{ projectAGSVersion }}
+@author         : {{ authorName }} <{{authorEmail}}>
+@AGS version    : v{{ AGSVersion }}
+@AutoIt version : v{{ AutoItVersion }}
 
 #ce ----------------------------------------------------------------------------
 
@@ -23,6 +23,7 @@ Opt('MustDeclareVars', 1)
 ;-------------------------------------------------------------------------------
 #include <IE.au3>
 #include <GUIConstantsEx.au3>
+#include <ButtonConstants.au3>
 #include <WinAPIDlg.au3>
 
 
@@ -44,8 +45,8 @@ Opt('MustDeclareVars', 1)
 ; By convention the directory `./vendor/AGS-components` is the place where
 ; to conventionally store AGS components;
 ;-------------------------------------------------------------------------------
-#include 'vendor/AGS-components/AGS_CheckUpdater.au3'
-#include 'vendor/AGS-components/AGS_HttpRequest.au3'
+#include 'vendor/AGS-components/ags-component-check-updater/ags-component-check-updater.au3'
+#include 'vendor/AGS-components/ags-component-http-request/ags-component-http-request.au3'
 
 
 ;-------------------------------------------------------------------------------

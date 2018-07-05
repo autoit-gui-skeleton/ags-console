@@ -13,3 +13,4 @@ Version        : 1.0
 
 ; Includes services
 #include './services/Dialogbox.au3'
+#include './services/ParametersIni.au3'

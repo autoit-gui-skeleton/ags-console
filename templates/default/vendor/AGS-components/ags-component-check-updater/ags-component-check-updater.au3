@@ -16,8 +16,8 @@ Package           : AGS version 1.0.0
 #include-once
 
 #include <Array.au3>
-#include '../../components/HttpRequest/AGS_HttpRequest.au3'
-#include '../../vendor/JSON/JSON.au3'
+#include '../../AGS-components/ags-component-http-request/ags-component-http-request.au3'
+#include '../../JSON/JSON.au3'
 
 
 Opt('MustDeclareVars', 1)

@@ -4,18 +4,12 @@
 # Mac files
 .DS_Store
 
-# docs files to ignored (Byte-compiled / optimized / DLL files / Jekyll dev
-_docs/*.manifest
-_docs/*.spec
-_docs/_site/*
-_docs/_development_tool/*
-_docs/.sass-cache/*
-_docs/*.css.map
-_docs/*.scssc
-_docs/Gemfile.lock
-_docs/*.gem
-_docs/.gems
-_docs/jekyll-theme-type-on-strap.gemspec
-
 # AGS files
-parameters.ini
+config/parameters.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
