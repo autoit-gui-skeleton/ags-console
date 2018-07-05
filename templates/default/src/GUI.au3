@@ -6,9 +6,11 @@ It contains the _main_GUI() method which is only called by the main entry
 program. This method is designed to create the graphical user interface (GUI)
 and manage all user interactions and events.
 
-AutoIt Version : 3.3.14.5
-Author         : v20100v <7567933+v20100v@users.noreply.github.com>
-AGS-Package    : AGS version 1.0.0
+@project        : {{ projectAGSName }}
+@version        : v{{ projectAGSVersion }}
+@author         : {{ authorName }} <{{authorEmail}}>
+@AGS version    : v{{ AGSVersion }}
+@AutoIt version : v{{ AutoItVersion }}
 
 #ce ----------------------------------------------------------------------------
 

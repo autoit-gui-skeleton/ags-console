@@ -232,7 +232,7 @@ To create a new template for ags-console:
 
 2 - Put into it all directories and files need into your template. When you use the command `ags new --template FoobarTheme`, it will copy all this directories and files into the output directory.
 
-3 - Into the name of this files, or into the text of this files, you can use templates variables. For example you can put the template variable `projectAGSName` into a text file by encapsulation like this `{%projectAGSName%}`. The template engine will replace it by its value given by user. Take a look of `./tempaltes/default/README.md`.
+3 - Into the name of this files, or into the text of this files, you can use templates variables. For example you can put the template variable `projectAGSName` into a text file by encapsulation like this `{{ projectAGSName }}`. The template engine will replace it by its value given by user. Take a look of `./tempaltes/default/README.md`.
 
 4 - We have two types of templates variables. Those which are asked to user in the configuration step of the new command, and those which are not asked to user. To add a new template variables, just defines into the `templateVariables` array.
 
@@ -286,23 +286,30 @@ For example in default template we have `/templates/default/project.json`:
 
 ```json
 {
-  "name": "{%projectAGSName%}",
-  "version": "{%projectAGSVersion%}",
-  "description": "{%projectAGSDescription%}",
+  "name": "{{ projectAGSName }}",
+  "version": "{{ projectAGSVersion }}",
+  "description": "{{ projectAGSDescription }}",
   "AGS": {
     "framework": {
-      "version": "{%AGSVersion%}"
+      "version": "{{ AGSVersion }}"
     },
     "AutoIt": {
-      "version": "{%AutoItVersion%}"
+      "version": "{{ AutoItVersion }}"
     }
   },
-  "author": "{%authorName%} <{%authorEmail%}>",
-  "license": "{%license%}",
-  "year": "{%year%}"
+  "author": "{{ authorName }} <{{ authorEmail }}>",
+  "license": "{{ license }}",
+  "year": "{{ year }}"
 }
 ```
 
+6 - AGS-console use [nunjucks](https://mozilla.github.io/nunjucks/) as a Node.js template engine. So you can feel free to use all elements of this template library described here : https://mozilla.github.io/nunjucks/templating.html.
+
+7 - To use your new template store in `./templates/FoobarTheme` folder, just type:
+
+```
+λ ags new MyApp --template FoobarTheme
+```
 
 
 <br/>

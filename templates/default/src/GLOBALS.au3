@@ -10,9 +10,11 @@ value over time, unlike global variables.
 By convention, all global variables must be written in capital letter and
 separated by underscore - for example : Global Const $APP_EMAIL_CONTACT
 
-AutoIt Version : 3.3.14.5
-Author         : v20100v <7567933+v20100v@users.noreply.github.com>
-AGS-Package    : AGS version 1.0.0
+@project        : {{ projectAGSName }}
+@version        : v{{ projectAGSVersion }}
+@author         : {{ authorName }} <{{authorEmail}}>
+@AGS version    : v{{ AGSVersion }}
+@AutoIt version : v{{ AutoItVersion }}
 
 #ce ----------------------------------------------------------------------------
 
@@ -40,13 +42,13 @@ EndIf
 ;-------------------------------------------------------------------------------
 ; Application main constants
 ;-------------------------------------------------------------------------------
-Global Const $APP_NAME = "myApplication"
-Global Const $APP_VERSION = "1.1.0"
+Global Const $APP_NAME = "{{ projectAGSName }}"
+Global Const $APP_VERSION = "{{ projectAGSVersion }}"
 Global Const $APP_WEBSITE = "https://myApplication-website.org"
 Global Const $APP_EMAIL_CONTACT = "myApplication@website.org"
-Global Const $APP_ID = "acme.myApplication"
+Global Const $APP_ID = "{{ authorName|slug }}.{{ projectAGSName|slug }}"
 Global Const $APP_LIFE_PERIOD = "2018-" & @YEAR
-Global Const $APP_COPYRIGHT = "© " & $APP_LIFE_PERIOD & ", A.C.M.E."
+Global Const $APP_COPYRIGHT = "© " & $APP_LIFE_PERIOD & ", {{ authorName|slug }}"
 
 
 ;-------------------------------------------------------------------------------
@@ -61,9 +63,11 @@ Global Const $APP_GUI_LINK_COLOR = 0x5487FB
 ;-------------------------------------------------------------------------------
 ; AGS-compontents Check Updater constants
 ;-------------------------------------------------------------------------------
-; Repository JSON use to check for updates. This json file must persist in a remote server available via internet,
-; and without restriction. For example you wan use Github to host it.
-Global Const $APP_REMOTE_RELEASES_JSON = "https://raw.githubusercontent.com/v20100v/autoit-gui-skeleton/develop/source/AGS-example-002___check-for-update/RELEASES.json"
+
+; Specifiy the repository JSON use to check for updates. This json file must persist in a remote server available via
+; internet, and without restriction. If you use Github as a control version, you can use it to host this file. In this
+; case use this bellow URL.
+Global Const $APP_REMOTE_RELEASES_JSON = "https://raw.githubusercontent.com/{{ authorName }}/{{ projectAGSName }}/master/source/RELEASES.json"
 
 
 ;-------------------------------------------------------------------------------

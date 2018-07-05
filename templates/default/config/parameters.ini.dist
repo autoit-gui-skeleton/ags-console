@@ -1,25 +1,22 @@
 #-------------------------------------------------------------------------------
 #
-# Copyright © 2018-05, v20100v
+# Copyright © {{ year }},
 #
-# @name           : AGS-tools-tidy-project
-# @version        : 1.0.0
-# @AGS package    : AGS v1.0.0
+# @project        : {{ projectAGSName }}
+# @version        : v{{ projectAGSVersion }}
+# @author         : {{ authorName }} <{{authorEmail}}>
+# @AGS version    : v{{ AGSVersion }}
+# @AutoIt version : v{{ AutoItVersion }}
 #
 # This file is a "template" of what your 'parameters.ini' file should look like
-# Set parameters here that may be different on each application and environment
-# development, prepare release or deployment for production.
+# Set parameters here that may be different on each application. Only this file
+# is save with control version and push on remote server.
 #
-#  1. Copy this File
-#  2. Rename it to parameters.ini
-#  3. Define your parameters into this file. Don't forgot that values of this
-#     parameters values can be change by user into the GUI.
-#  4. We add paramter of application into the section [APPLICATION]. Don't
-#     forget to specify if the parameter is OPTIONAL or REQUIRED in comment.
-#  5. We can also found section [AGS-COMPONENT_NAME] if we add its component
-#     into our project. And its section is used in order to configure this
-#     component. For example with the AGS compponent HttpRequest, we can input
-#     the section [AGS_HTTP_REQUEST] to configure its parameter.
+# You add parameter of application into the section [APPLICATION]. Don't forget
+# to specify if the parameter is OPTIONAL or REQUIRED in comment. You can also
+# found section [AGS-COMPONENT_NAME] to configure each AGS components. For
+# example with the AGS compponent HttpRequest, you have the section
+# [AGS_HTTP_REQUEST] to configure its parameters.
 #
 #
 # How this file is referenced in AGS project ?
@@ -27,6 +24,7 @@
 # To use it, we have a global constante variable $APP_PARAMETERS_INI, wich
 # contains the full path to it. It's defined in `./src/GLOBALS.au3`, and when
 # the application start-up, it checks that parameters.ini exist.
+#
 #
 # How to read the value of a parameter ?
 # --------------------------------------
@@ -41,6 +39,7 @@
 # Local $IS_OPEN = Int(IniRead( _
 #   $APP_PARAMETERS_INI, "APPLICATION", "IS_OPEN", -1)
 # ```
+#
 #
 # How to change the value of a parameter ?
 # ----------------------------------------
@@ -64,6 +63,31 @@
 ; Add optional parameters of application here
 
 
+[AGS_CHECK_UPDATER]
+; [REQUIRED] Enable/disable the search of a new update on start-up.
+#LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP=1
+
+
 [AGS_HTTP_REQUEST]
 ; [OPTIONAL] Use a proxy for http connexion
 # PROXY=http://myProxy.com:8080
+
+; [OPTIONAL] Time-out value applied when resolving a host name to an @IP,
+; in miliseconds.
+# RESOLVE_TIMEOUT=1000
+
+; [OPTIONAL] Time-out value applied when establishing a communication socket
+; with the target server, in milliseconds.
+# CONNECT_TIMEOUT=1000
+
+; [OPTIONAL] Time-out value applied when sending an individual packet of request
+; data on the communication socket to the target server, in milliseconds. A
+; large request sent to an HTTP server are normally be broken up into multiple
+; packets. The send time-out applies to sending each packet individually.
+# SEND_TIMEOUT=1000
+
+; [OPTIONAL] Time-out value applied when receiving a packet of response data
+; from the target server, in milliseconds. Large responses are be broken up into
+; multiple packets; the receive time-out applies to fetching each packet of data
+; off the socket.
+# RECEIVE_TIMEOUT=1000
