@@ -1,7 +1,7 @@
 {
   "name": "ags-console",
-  "version": "1.0.0-alpha",
-  "description": "Application console for AGS (AutoIt GUI Skeleton) framework. Create a new project, clean code...",
+  "version": "0.1.0",
+  "description": "Command line application for AGS (AutoIt GUI Skeleton) framework.",
   "AGS": {
     "framework": {
       "version": "1.0.0"
@@ -11,9 +11,6 @@
     }
   },
   "keywords": [
-    "Generate a new AGS project",
-    "Create a Window Setup for AGS deployment",
-    "Tidy all source files AGS",
     "AGS",
     "AutoIt",
     "AutoItGUISkeleton",
