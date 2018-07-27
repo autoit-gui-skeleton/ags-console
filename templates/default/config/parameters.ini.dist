@@ -63,7 +63,7 @@
 ; Add optional parameters of application here
 
 
-[AGS_CHECK_UPDATER]
+[AGS_CHECK_FOR_UPDATES]
 ; [REQUIRED] Enable/disable the search of a new update on start-up.
 #LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP=1
 

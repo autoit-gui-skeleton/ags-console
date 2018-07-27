@@ -228,7 +228,7 @@ Func _GUI_launch_CheckForUpdates($main_GUI, $context)
 	Local $remoteUrlReleasesJson = $APP_REMOTE_RELEASES_JSON
 
 	; Read settings in parameters.ini file
-	Local $LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP = Int(IniRead($APP_PARAMETERS_INI, "AGS_CHECK_UPDATER", "LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP", "NotFound"))
+	Local $LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP = Int(IniRead($APP_PARAMETERS_INI, "AGS_CHECK_FOR_UPDATES", "LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP", "NotFound"))
 	Local $proxy = IniRead($APP_PARAMETERS_INI, "AGS_HTTP_REQUEST", "PROXY", "NotFound")
 
 	If ($context = "ON_STARTUP" And $LAUNCH_CHECK_FOR_UPDATE_ON_STARTUP = 1) Or ($context <> "ON_STARTUP") Then
@@ -236,7 +236,7 @@ Func _GUI_launch_CheckForUpdates($main_GUI, $context)
 		If (@error) Then
 			Local $msgError = "Unable to connect with the remote server use to check if a new version is available." & _
 					@CRLF & @CRLF & _
-					"Code error = AGS_CHECK_UPDATER_" & @error & @CRLF & $resultCheckUpdates
+					"Code error = AGS_CHECK_FOR_UPDATES_" & @error & @CRLF & $resultCheckUpdates
 			If ($proxy <> "NotFound") Then
 				$msgError = $msgError & @CRLF & @CRLF & "We found a proxy settings into configuration file of application, equals to : " & $proxy
 			Else

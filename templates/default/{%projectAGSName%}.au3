@@ -45,7 +45,7 @@ Opt('MustDeclareVars', 1)
 ; By convention the directory `./vendor/AGS-components` is the place where
 ; to conventionally store AGS components;
 ;-------------------------------------------------------------------------------
-#include 'vendor/AGS-components/ags-component-check-updater/ags-component-check-updater.au3'
+#include 'vendor/AGS-components/AGS-component-check-for-updates/AGS-component-check-for-updates.au3'
 #include 'vendor/AGS-components/ags-component-http-request/ags-component-http-request.au3'
 
 

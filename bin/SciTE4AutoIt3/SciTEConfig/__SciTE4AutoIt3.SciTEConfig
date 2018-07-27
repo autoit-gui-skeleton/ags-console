@@ -1,0 +1,52 @@
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# START: DO NOT CHANGE ANYTHING AFTER THIS LINE     #-#-#-#-#
+# Standard SciTE4AutoIt3 Color scheme
+#------------------------------------------------------------
+font.base=font:Arial,size:10,$(font.override)
+font.monospace=font:Courier New,size:10
+
+#Color Settings
+#Background
+style.au3.32=style.*.32=$(font.base),back:#F0F4F9
+#CaretLineBackground
+caret.line.back=#FFFED8
+# Brace highlight
+style.au3.34=fore:#0000FF,back:#F0F4F9
+# Brace incomplete highlight
+style.au3.35=fore:#009933,back:#F0F4F9
+# White space
+style.au3.0=fore:#000000
+# Comment line
+style.au3.1=fore:#008000,italics
+# Comment block
+style.au3.2=fore:#008000,italics
+# Number
+style.au3.3=fore:#0000FF
+# Function
+style.au3.4=fore:#000090
+# Keyword
+style.au3.5=fore:#0000FF
+# Macro
+style.au3.6=fore:#808000
+# String
+style.au3.7=fore:#FF0000
+# Operator
+style.au3.8=fore:#FF8000
+# Variable
+style.au3.9=fore:#5A5A5A
+# Send keys in string
+style.au3.10=fore:#808080
+# Pre-Processor
+style.au3.11=fore:#808000
+# Special
+style.au3.12=fore:#DC143C
+#Abbrev-Expand
+style.au3.13=fore:#FF0000
+# COM Objects
+style.au3.14=fore:#993399
+#Standard UDF's
+style.au3.15=fore:#0080FF
+#User UDF's
+style.au3.16=fore:#0080FF
+# END => DO NOT CHANGE ANYTHING BEFORE THIS LINE  #-#-#-#-#-#
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#

@@ -1,7 +1,7 @@
 {
   "name": "ags-console",
   "version": "0.1.0",
-  "description": "Command line application for AGS (AutoIt GUI Skeleton) framework.",
+  "description": "Command line application for AGS - AutoIt GUI Skeleton framework.",
   "AGS": {
     "framework": {
       "version": "1.0.0"
@@ -31,9 +31,11 @@
   "scripts": {
     "pkg": "pkg . --targets node10-win-x64 --output ./build/Ags",
     "package-x86": "pkg . --targets node10-win-x86 --output ./build/Ags-x86",
-    "package-x64": "pkg . --targets node10-win-x64 --output ./build/Ags-x64"
+    "package-x64": "pkg . --targets node10-win-x64 --output ./build/Ags-x64",
+    "bundle": ".\\node_modules\\.bin\\browserify.cmd index.js --no-bundle-external --no-builtins -o index-bundled.js"
   },
   "dependencies": {
+    "@rauschma/stringio": "^1.4.0",
     "async": "^2.6.1",
     "boxen": "^1.3.0",
     "caporal": "^0.10.0",
@@ -42,6 +44,7 @@
     "fast-glob": "^2.2.2",
     "inquirer": "^6.0.0",
     "nunjucks": "^3.1.3",
+    "prettyjson": "^1.2.1",
     "replace-in-file": "^3.4.0",
     "request": "^2.87.0",
     "shelljs": "^0.8.2",
@@ -49,9 +52,13 @@
     "word-wrap": "^1.2.3"
   },
   "devDependencies": {
+    "browserify": "^16.2.2",
     "pkg": "^4.3.3"
   },
   "pkg": {
-    "assets": "./templates/**/*"
+    "assets": [
+      "./templates/**/*",
+      "./bin/**/*"
+    ]
   }
 }

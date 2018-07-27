@@ -36,7 +36,7 @@ Func _main_GUI()
 
 	_GUI_Init_Menu()
 
-    ; By default all elements of this view are visible
+	; By default all elements of this view are visible
 	_GUI_Init_Footer()
 
 	; By default all elements of below views are hidden
@@ -159,21 +159,21 @@ EndFunc
 ; @return void
 ;==============================================================================================================
 Func _GUI_Handler_Menu($action)
-   Switch $action
-	  Case $GUI_DISABLE
-		 ; Define here all menu items to disable
-		 GUICtrlSetState($menu_File, $GUI_DISABLE)
-		 GUICtrlSetState($menu_Configuration, $GUI_DISABLE)
-		 GUICtrlSetState($menu_About, $GUI_DISABLE)
+	Switch $action
+		Case $GUI_DISABLE
+			; Define here all menu items to disable
+			GUICtrlSetState($menu_File, $GUI_DISABLE)
+			GUICtrlSetState($menu_Configuration, $GUI_DISABLE)
+			GUICtrlSetState($menu_About, $GUI_DISABLE)
 
-	  Case $GUI_ENABLE
-		 ; Define here all menu items to enable
-		 GUICtrlSetState($menu_File, $GUI_ENABLE)
-		 GUICtrlSetState($menu_Configuration, $GUI_ENABLE)
-		 GUICtrlSetState($menu_About, $GUI_ENABLE)
+		Case $GUI_ENABLE
+			; Define here all menu items to enable
+			GUICtrlSetState($menu_File, $GUI_ENABLE)
+			GUICtrlSetState($menu_Configuration, $GUI_ENABLE)
+			GUICtrlSetState($menu_About, $GUI_ENABLE)
 
 	EndSwitch
- EndFunc
+EndFunc
 
 
 ;==============================================================================================================
@@ -315,9 +315,9 @@ EndFunc
 ; @return @void
 ;==============================================================================================================
 Func _GUICtrl_MouseOver_Label($iCtrlID)
-   GUISetFont(10, 400, 0, "Segoe UI")
-   GUICtrlSetColor($iCtrlID, 0x63b3e8)
-   GUICtrlSetFont($iCtrlID, Default, Default, 4)
+	GUISetFont(10, 400, 0, "Segoe UI")
+	GUICtrlSetColor($iCtrlID, 0x63b3e8)
+	GUICtrlSetFont($iCtrlID, Default, Default, 4)
 EndFunc
 
 
@@ -330,6 +330,6 @@ EndFunc
 ;==============================================================================================================
 Func _GUICtrl_MouseLeave_Func($iCtrlID)
 	GUISetFont(10, 400, 0, "Segoe UI")
-   GUICtrlSetColor($iCtrlID, 0x5487FB)
-   GUICtrlSetFont($iCtrlID, Default, Default, 0)
+	GUICtrlSetColor($iCtrlID, 0x5487FB)
+	GUICtrlSetFont($iCtrlID, Default, Default, 0)
 EndFunc

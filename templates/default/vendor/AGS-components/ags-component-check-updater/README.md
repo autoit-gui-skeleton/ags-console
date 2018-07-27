@@ -1,10 +1,10 @@
-AGS-component-check-updater
+AGS-component-check-for-updates
 ===========================
 
 
-## What is AGS-component-check-updater ?
+## What is AGS-component-check-for-updates ?
 
-The purpose of this component is to give the availability to keep up-to-date an AutoIt application built with AGS. AGS-component-check-updater is a subproject of AutoIt Gui Skeleton [AGS](https://v20100v.github.io/autoit-gui-skeleton/). AGS components are a set of AutoIt libraries, that you can use in our own applications.
+The purpose of this component is to give the availability to keep up-to-date an AutoIt application built with AGS. AGS-component-check-for-updates is a subproject of AutoIt Gui Skeleton [AGS](https://v20100v.github.io/autoit-gui-skeleton/). AGS components are a set of AutoIt libraries, that you can use in our own applications.
 
 It's an handler releases by compare a local version to a remote version store in a JSON file (RELEASES.json). This JSON file is saved on remote server, so to work it needs an internet connection to recover this JSON file, as well as a JSON parser in AutoIt. We use the implementation proposed by ward store in vendor folder to deal with JSON file.
 

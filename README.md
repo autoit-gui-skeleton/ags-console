@@ -2,7 +2,7 @@ AGS-console
 ===========
 
 
-> AGS-console provides commands created in the Node.js ecosystem in order to help developpers who built an AutoIt project with AGS. AGS-console is a subproject of AutoIt Gui Skeleton [AGS](https://v20100v.github.io/autoit-gui-skeleton/). You can also customize and create your own commands to help your production.
+> AGS-console is a command line application for [AGS framework](https://v20100v.github.io/autoit-gui-skeleton/). It provides commands created in the Node.js ecosystem in order to help developpers who want built an AutoIt application with AGS. You can also customize and create your own commands to help your production.
 
 
 <br/>
